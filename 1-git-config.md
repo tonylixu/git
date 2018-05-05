@@ -25,4 +25,19 @@ That's it! These are the basic settings you need to get started!
 ### Check your settings
 ```bash
 $ git config --list
+core.excludesfile=~/.gitignore
+core.legacyheaders=false
+core.quotepath=false
+mergetool.keepbackup=true
+push.default=simple
+color.ui=auto
+color.interactive=auto
+...
+```
+You may see keys more than once, because Git reads the same key from different files (`/etc/gitconfig`, `~/.gitconfig`, and `project/.git/config`). In this case, Git uses the last value for each unique key.
+
+You can also check what Git thinks a specific key’s value is by typing `git config <key>`:
+```bash
+$ git config user.name
+Tony Li Xu
 ```
