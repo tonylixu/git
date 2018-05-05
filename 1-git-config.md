@@ -9,3 +9,20 @@ Git comes with a tool called `git config` that lets your get and set configurati
 Each level overrides values in the previous level, so values in .git/config trump those in /etc/gitconfig.
 
 ### Few basic settings
+* Your identity: You should set your username and email address. This is important because every Git commit uses this informationn, and it's immutably baked into the commits:
+```bash
+$ git config --global user.name "Tony Xu"
+$ git config --global user.email tony@lixu.ca
+```
+Again, you need to do this only once if you pass the --global option, because then Git will always use that information for anything you do on that system. If you want to override this with a different name or email address for specific projects, you can run the command without the --global option when you’re in that project.
+
+* Your editor:
+```bash
+$ git config --global core.editor emacs
+```
+That's it! These are the basic settings you need to get started!
+
+### Check your settings
+```bash
+$ git config --list
+```
